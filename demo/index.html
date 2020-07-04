@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixels</title>
+</head>
+
+<body>
+  <canvas id="mario"></canvas>
+
+  <script type="text/javascript">
+    const palette = ['transparent', '#D82800', '#887000', '#FC9838'];
+
+    const pixels = [
+      [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+      [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      [0, 0, 0, 2, 2, 2, 2, 3, 3, 2, 3, 0, 0, 0, 0],
+      [0, 0, 2, 2, 3, 2, 3, 3, 3, 2, 3, 3, 3, 0, 0],
+      [0, 0, 2, 2, 3, 2, 2, 3, 3, 3, 2, 3, 3, 3, 0],
+      [0, 0, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 0, 0],
+      [0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0],
+      [0, 0, 0, 2, 2, 2, 1, 2, 2, 2, 0, 0, 0, 0, 0],
+      [0, 0, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 0, 0],
+      [0, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 0],
+      [0, 3, 3, 3, 2, 1, 3, 1, 1, 3, 1, 2, 3, 3, 0],
+      [0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 3, 3, 3, 0],
+      [0, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 0],
+      [0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0],
+      [0, 0, 2, 2, 2, 2, 0, 0, 0, 2, 2, 2, 2, 0, 0],
+      [0, 2, 2, 2, 2, 2, 0, 0, 0, 2, 2, 2, 2, 2, 0]
+    ];
+
+    window.onload = function () {
+      const canvas = document.querySelector('canvas#mario');
+
+      const mario = new Pixels({
+        canvas, // <-- Target canvas.
+        palette, // <-- Colour palette.
+        pixels, // <-- Pixels to render.
+        size: 10 // <-- The height & width of each rendered pixel (px).
+      });
+
+      mario.render();
+    }
+  </script>
+
+  <script src="../src/pixels.js"></script>
+</body>
+
+</html>
