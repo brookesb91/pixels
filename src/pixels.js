@@ -30,9 +30,7 @@
      * @memberof Pixels
      */
     render() {
-      // Set the canvas height & width multiplied by pixel size.
-      this._canvas.height = this._height * this._size;
-      this._canvas.width = this._width * this._size;
+      this._initCanvas();
 
       // --> Row
       for (let y = 0; y < this._pixels.length; y++) {
@@ -42,6 +40,13 @@
           this._draw(pixel, x, y);
         }
       }
+    }
+
+    _initCanvas() {
+      // Set the canvas height & width multiplied by pixel size.
+      this._canvas.height = this._height * this._size;
+      this._canvas.width = this._width * this._size;
+      this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
     }
 
     /**
