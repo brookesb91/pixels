@@ -1,4 +1,4 @@
-# pixels
+# Pixels
 
 :space_invader: A simple HTML canvas pixel art renderer.
 
